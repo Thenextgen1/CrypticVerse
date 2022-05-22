@@ -1,19 +1,15 @@
 import React from 'react'
-import { Navbar, Footer, Main } from '../components'
-
+import { Header, Navbar, Footer, Main } from '../components'
+import './App.css'
 
 const App = () => {
     return (
         <div className='app'>
-            <div className="navbar">
-                <Navbar />
-            </div>
-            <div className='main'>
-                <Main />
-            </div>
-            <div className="footer">
-                <Footer />
-            </div>
+            <Header />
+            <Navbar />
+            <Main />
+            <Footer />
+
         </div>
     )
 }
