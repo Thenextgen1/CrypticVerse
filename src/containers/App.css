@@ -1,10 +1,7 @@
-/* font-family: 'Inter', sans-serif;
+/* 
 font-family: 'Lato', sans-serif; */
 
 
-html {
-    box-sizing: border-box;
-}
 
 *,
 *:before,
@@ -24,4 +21,10 @@ li {
 
 a {
     text-decoration: none;
+}
+
+.app {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif !important;
+    padding: 1em 5em;
 }

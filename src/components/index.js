@@ -2,3 +2,8 @@ export { default as Navbar } from './Navbar/Navbar';
 export { default as Main } from './Main/Main'
 export { default as Footer } from './Footer/Footer'
 export { default as Header } from './Header/Header'
+export { default as Football } from './Main/Football'
+export { default as Rugby } from './Main/Rugby'
+export { default as Cycling } from './Main/Cycling'
+export { default as Basketball } from './Main/Basketball'
+export { default as Tennis } from './Main/Tennis'

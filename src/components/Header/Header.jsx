@@ -1,61 +1,46 @@
 import React from 'react'
-import { Menu, Dropdown, message, Space } from 'antd';
+import { Select } from 'antd';
 import { TwitterCircleFilled, DownOutlined, InstagramFilled, DribbbleCircleFilled } from '@ant-design/icons'
-
+import '../../styles/header.css'
 
 const Header = () => {
-    const onClick = ({ key }) => {
-        message.info(`Click on item ${key}`);
-    };
-    const menu = (
-        <Menu
-            onClick={onClick}
-            items={[
-                {
-                    label: 'Eng',
-                    key: '1',
-                },
-                {
-                    label: 'Ger',
-                    key: '2',
-                },
-                {
-                    label: 'Fre',
-                    key: '3',
-                },
-            ]}
-        />
-    );
+    const { Option } = Select;
 
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+    };
 
     return (
-        <header>
+        <header className='header'>
             <ul>
                 <li>
                     <a href='https://twitter.com'>
-                        <TwitterCircleFilled />
+                        <TwitterCircleFilled className='social-links' />
                     </a>
                 </li>
                 <li>
                     <a href='https://instagram.com'>
-                        <InstagramFilled />
+                        <InstagramFilled className='social-links' />
                     </a>
                 </li>
                 <li>
                     <a href='https://dribble.com'>
-                        <DribbbleCircleFilled />
+                        <DribbbleCircleFilled className='social-links' />
                     </a>
                 </li>
             </ul>
-            <h1>Sportyverse</h1>
-            <Dropdown overlay={menu}>
-                <a href='https://google.com' onClick={e => e.preventDefault()}>
-                    <Space>
-                        Hover me, Click menu item
-                        <DownOutlined />
-                    </Space>
-                </a>
-            </Dropdown>
+            <h1 style={{ letterSpacing: '2px' }}>Sportyverse</h1>
+            <Select
+                defaultValue="En"
+                style={{
+                    width: 120,
+                }}
+                onChange={handleChange}
+            >
+                <Option value="Fre">Fre</Option>
+                <Option value="Fre">Ger</Option>
+                <Option value="Ger">En</Option>
+            </Select>
         </header>
     )
 }
