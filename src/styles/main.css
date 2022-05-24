@@ -1,0 +1,21 @@
+.main {
+    margin-top: 2em;
+}
+
+.sport-showcase {
+    display: flex;
+}
+
+.main .sport-images-container img {
+    opacity: 0.7;
+}
+
+.sport-showcase div img {
+    width: 306.5px;
+    height: 208px;
+}
+
+.football {
+    width: 613px;
+    height: 200px;
+}

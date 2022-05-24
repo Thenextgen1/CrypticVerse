@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4em;
+}
+
+.navbar ul li {
+    display: inline-block;
+    padding-right: 3em;
+}
+
+.category-links {
+    color: #3e4246ed;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.hamburger {
+    filter: invert(22%) sepia(18%) saturate(222%) hue-rotate(169deg) brightness(97%) contrast(86%);
+}
