@@ -6,6 +6,10 @@
     display: flex;
 }
 
+.allsports-showcase {
+    display: flex;
+}
+
 .main .sport-images-container img {
     opacity: 0.7;
 }
@@ -18,4 +22,38 @@
 .football {
     width: 613px;
     height: 200px;
+}
+
+.cycling-container,
+.football-container,
+.rugby-container,
+.basketball-container {
+    background-repeat: no-repeat;
+}
+
+.basketball-container,
+.rugby-container {
+    height: 13em;
+    background-size: 100%;
+    width: 100%;
+}
+
+.cycling-container {
+    background-image: url(../assets/cycling.jpg);
+    height: 23em;
+}
+
+.football-container {
+    background-image: url(../assets/football.jpg);
+    height: 10em;
+    background-size: 100% 100%;
+}
+
+.basketball-container {
+    background: url(../assets/basketball.jpg);
+}
+
+.rugby-container {
+    background: url(../assets/rugby.jpg);
+
 }
