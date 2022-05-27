@@ -4,6 +4,7 @@ import { Input } from 'antd';
 import '../../styles/navbar.css'
 import hamburger from '../../assets/icon-hamburger.svg'
 
+
 const Navbar = () => {
     const { Search } = Input;
     const onSearch = (value) => console.log(value);

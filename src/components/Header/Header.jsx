@@ -29,7 +29,7 @@ const Header = () => {
                     </a>
                 </li>
             </ul>
-            <h1 style={{ letterSpacing: '2px' }}>Sportyverse</h1>
+            <h1 style={{ letterSpacing: '4px' }}>Sportyverse</h1>
             <Select
                 defaultValue="En"
                 style={{

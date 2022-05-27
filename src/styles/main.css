@@ -2,12 +2,27 @@
     margin-top: 2em;
 }
 
+.sport-images-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 .sport-showcase {
     display: flex;
 }
 
+.single-sport-showcase {
+    flex-grow: 4;
+
+}
+
+
+
 .allsports-showcase {
     display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .main .sport-images-container img {
@@ -29,6 +44,8 @@
 .rugby-container,
 .basketball-container {
     background-repeat: no-repeat;
+    opacity: 0.9;
+
 }
 
 .basketball-container,
@@ -39,21 +56,100 @@
 }
 
 .cycling-container {
-    background-image: url(../assets/cycling.jpg);
+    position: relative;
     height: 23em;
+    background-image: url(../assets/cycling.jpg);
+    width: 100%;
+    background-size: cover;
 }
 
 .football-container {
-    background-image: url(../assets/football.jpg);
+
     height: 10em;
+    background-image: url(../assets/football.jpg);
     background-size: 100% 100%;
 }
 
 .basketball-container {
     background: url(../assets/basketball.jpg);
+    background-size: 110% 100%;
 }
 
 .rugby-container {
     background: url(../assets/rugby.jpg);
 
+}
+
+.cycling-container div,
+.football-container div,
+.basketball-container div,
+.rugby-container div {
+    position: relative;
+    top: 60%;
+    margin-left: 3em;
+    margin-right: 2em;
+
+}
+
+.football-container div {
+    top: 40%;
+}
+
+.basketball-container div,
+.rugby-container div {
+    top: 40%;
+}
+
+
+
+
+
+.cycling-link,
+.football-link,
+.rugby-link,
+.basketball-link {
+    background-color: #e63946;
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+    letter-spacing: 2px;
+}
+
+.football-link {
+    background-color: #107cc0;
+}
+
+.basketball-link {
+    background-color: #007506;
+}
+
+.rugby-link {
+    background-color: #99582a;
+}
+
+.cycling-link:hover,
+.football-link:hover,
+.rugby-link:hover,
+.basketball-link:hover {
+    background-color: white;
+}
+
+.cycling-link:hover {
+    color: #e63946;
+    border: 1px solid #e63946;
+}
+
+.football-link:hover {
+    color: #107cc0;
+    border: 1px solid #107cc0;
+}
+
+.basketball-link:hover {
+    color: #007506;
+    border: 1px solid #007506
+}
+
+.rugby-link:hover {
+    color: #99582a;
+    border: 1px solid #99582a;
 }

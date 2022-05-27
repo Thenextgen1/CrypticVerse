@@ -1,8 +1,16 @@
 import React from 'react'
+import { Header } from '../../components'
+
 
 const Basketball = () => {
+
     return (
-        <div>Basketball</div>
+        <>
+            <Header />
+            <div>
+                Basketball
+            </div>
+        </>
     )
 }
 
