@@ -1,8 +1,14 @@
 import React from 'react'
+import { Header } from '../../components'
+
 
 const Rugby = () => {
     return (
-        <div>Rugby</div>
+        <>
+            <Header />
+            <div>Rugby</div>
+        </>
+
     )
 }
 

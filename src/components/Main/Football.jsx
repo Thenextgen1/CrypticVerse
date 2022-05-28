@@ -1,8 +1,12 @@
 import React from 'react'
+import { Header } from '../../components'
 
 const Football = () => {
     return (
-        <div>Football</div>
+        <>
+            <Header />
+            <div>Football</div>
+        </>
     )
 }
 

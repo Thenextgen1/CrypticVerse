@@ -1,11 +1,14 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import App from './containers/App'
-import 'antd/dist/antd.min.css';
-import store from './app/store'
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import App from './containers/App';
 import { Football, Cycling, Basketball, Rugby, Tennis } from './components'
+import store from './app/store';
+import 'antd/dist/antd.min.css';
+import './index.css'
+
+
 const root = createRoot(document.getElementById('root'))
 
 root.render(
