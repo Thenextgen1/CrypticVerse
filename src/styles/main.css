@@ -158,9 +158,12 @@
 .football-card {
     margin-right: 2em;
     width: 300px;
+    padding-bottom: 2em;
 }
 
-.football-card h3 {
+.football-card h3,
+.boxing-card h4,
+.cycling-card h4 {
     font-weight: 700;
 }
 
@@ -178,8 +181,9 @@
 }
 
 .football-card-container .allfootballnews-container {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em 3em;
 }
 
 .football-card-container {
@@ -213,4 +217,38 @@
 .show-more {
     color: #5e6163c4;
     font-size: 1.1em;
+}
+
+.boxing-card,
+.cycling-card {
+
+    padding: 1em 0 2em 0;
+    border-bottom: 1px solid #5e61634f;
+    border-top: 1px solid #5e61634f;
+
+}
+
+.boxing-card a,
+.cycling-card a {
+    color: #5e6163c4;
+    letter-spacing: 1px;
+
+}
+
+.boxing-card-container,
+.cycling-card-container {
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cycling-card {
+    border-top: none;
+}
+
+.othersports-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em 3em;
 }

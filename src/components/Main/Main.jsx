@@ -1,23 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Typography } from 'antd';
 import moment from 'moment'
 import { useGetNewsQuery } from '../../services/newsApi';
-import '../../styles/main.css'
-
-
-
-const { Title } = Typography;
+import '../../styles/main.css';
+import demoImg from '../../assets/cycling-img.jpg'
 
 
 const Main = () => {
 
-    const { data: footballNews } = useGetNewsQuery({ newsCategory: 'football', count: 3 });
-
+    const { data: footballNews } = useGetNewsQuery({ newsCategory: 'Soccer, Football', count: 3 });
+    const { data: cyclingNews } = useGetNewsQuery({ newsCategory: 'Cycling, Surfing', count: 3 });
+    const { data: boxingNews } = useGetNewsQuery({ newsCategory: 'Boxing, MMA', count: 3 })
+    console.log(footballNews, cyclingNews, boxingNews)
 
     if (!footballNews?.value) return 'Loading...'
-
-    console.log(footballNews)
 
     const allFootballNews = footballNews.value.map((news, i) => (
         <div className='football-card'
@@ -26,15 +22,44 @@ const Main = () => {
             <img style={{ width: '300px', height: '150px' }} src={news?.image?.thumbnail?.contentUrl} alt="football-news" />
             <div className='football-newslink-container'>
                 <a className='football-link' href={news.url} target="_blank" rel='noreferrer'>Read Article</a>
-                <p>{news.provider[0]?.name}</p>
+                <p>{news.provider[0]?.name.length > 20 ? `${news.provider[0]?.name.substring(0, 20)}...` : news.provider[0]?.name}</p>
             </div>
-            <h3>{news.name}</h3>
+            <h3>{news.name.length > 65 ? `${news.description.substring(0, 65)}...` : news.name}</h3>
             <p>
-                {news.description > 100 ? `${news.description.substring(0, 100)}...` : news.description}
+                {news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}
             </p>
             <p>
                 {moment(news.datePublished).startOf('ss').fromNow()}
             </p>
+        </div>
+    ))
+
+    const allBoxingNews = boxingNews.value.map((news, i) => (
+        <div className='boxing-card' key={i}>
+            <div className='boxing-card-container'>
+                <div>
+                    <h4>{news.name.length > 30 ? `${news.name.substring(0, 30)}...` : news.name}</h4>
+                    <p>
+                        {moment(news.datePublished).startOf('ss').fromNow()}
+                    </p>
+                </div>
+                <img style={{ width: '100px', height: '100px' }} src={news?.image?.thumbnail?.contentUrl} alt="boxing" />
+            </div>
+            <a href={news.url} target="_blank" rel='noreferrer'>Read Article</a>
+        </div>
+    ))
+    const allcyclingNews = cyclingNews.value.map((news, i) => (
+        <div className='cycling-card' key={i}>
+            <div className='cycling-card-container'>
+                <div>
+                    <h4>{news.name.length > 30 ? `${news.name.substring(0, 30)}...` : news.name}</h4>
+                    <p>
+                        {moment(news.datePublished).startOf('ss').fromNow()}
+                    </p>
+                </div>
+                <img style={{ width: '100px', height: '100px' }} src={news?.image?.thumbnail?.contentUrl || demoImg} alt="cycling" />
+            </div>
+            <a className='' href={news.url} target="_blank" rel='noreferrer'>Read Article</a>
         </div>
     ))
 
@@ -87,6 +112,10 @@ const Main = () => {
                 <div className='allfootballnews-container'>
                     {allFootballNews}
 
+                </div>
+                <div className='othersports-container'>
+                    {allBoxingNews}
+                    {allcyclingNews}
                 </div>
             </section>
 
