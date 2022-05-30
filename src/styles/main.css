@@ -265,6 +265,15 @@
     .football-card-container .allfootballnews-container {
         grid-template-columns: 1fr;
     }
+
+    .sport-images-container {
+        display: none;
+    }
+
+    .boxing-card {
+        border-top: none;
+    }
+
 }
 
 
@@ -275,5 +284,24 @@
     .sport-images-container,
     .sport-showcase {
         flex-direction: column;
+    }
+}
+
+@media(max-width: 670px) {
+    .othersports-container {
+        grid-template-columns: 1fr;
+    }
+
+    .boxing-card,
+    .cycling-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cycling-card a,
+    .boxing-card a {
+        margin-top: 1em;
     }
 }

@@ -16,6 +16,25 @@
     letter-spacing: 2px;
 }
 
+.ant-input-group-wrapper.search {
+    width: 200px;
+}
+
 .hamburger {
     filter: invert(22%) sepia(18%) saturate(222%) hue-rotate(169deg) brightness(97%) contrast(86%);
+}
+
+@media(max-width: 1440px) {
+    .navbar ul li {
+        padding-right: 2em;
+    }
+
+    .category-links {
+        font-size: 1.1em;
+    }
+
+    .ant-input-group-wrapper.search {
+        width: 150px;
+    }
+
 }

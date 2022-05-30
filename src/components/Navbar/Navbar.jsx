@@ -30,11 +30,9 @@ const Navbar = () => {
                 </li>
             </ul>
             <Search
+                className='search'
                 placeholder="Search"
                 onSearch={onSearch}
-                style={{
-                    width: 'auto',
-                }}
             />
 
         </nav>

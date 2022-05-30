@@ -8,14 +8,14 @@ import demoImg from '../../assets/cycling-img.jpg'
 
 const Main = () => {
 
-    const { data: footballNews } = useGetNewsQuery({ newsCategory: 'Soccer, Football', count: 3 });
+    const { data: footballNews } = useGetNewsQuery({ newsCategory: 'Soccer, Football', count: 4 });
     const { data: cyclingNews } = useGetNewsQuery({ newsCategory: 'Cycling, Surfing', count: 3 });
     const { data: boxingNews } = useGetNewsQuery({ newsCategory: 'Boxing, MMA', count: 3 })
-    console.log(footballNews, cyclingNews, boxingNews)
+    const desktopNews = footballNews?.value.slice(0, 3)
 
-    if (!footballNews?.value || !cyclingNews?.value || !boxingNews?.value) return 'Loading...'
+    if (!desktopNews || !cyclingNews?.value || !boxingNews?.value) return 'Loading...'
 
-    const allFootballNews = footballNews.value.map((news, i) => (
+    const allFootballNews = desktopNews.map((news, i) => (
         <div className='football-card'
             key={i}
         >
