@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <img className="hamburger" src={hamburger} alt="hamburger" />
+            {/* <img className="hamburger" src={hamburger} alt="hamburger" /> */}
             <ul>
                 <li>
                     <Link className="category-links" to="/football">Football</Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
                 placeholder="Search"
                 onSearch={onSearch}
                 style={{
-                    width: 200,
+                    width: 'auto',
                 }}
             />
 

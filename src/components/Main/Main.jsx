@@ -13,7 +13,7 @@ const Main = () => {
     const { data: boxingNews } = useGetNewsQuery({ newsCategory: 'Boxing, MMA', count: 3 })
     console.log(footballNews, cyclingNews, boxingNews)
 
-    if (!footballNews?.value) return 'Loading...'
+    if (!footballNews?.value || !cyclingNews?.value || !boxingNews?.value) return 'Loading...'
 
     const allFootballNews = footballNews.value.map((news, i) => (
         <div className='football-card'
