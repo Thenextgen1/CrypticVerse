@@ -1,10 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+const API_KEY = process.env.REACT_APP_SPORTS_API_KEY
+console.log(process.env.REACT_APP_SPORTS_API_KEY)
 
 const newsApiHeaders = {
     'X-BingApis-SDK': 'true',
     'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com',
-    'X-RapidAPI-Key': 'df0958e18fmsh51ce637f2fd91e2p13bf6cjsn8fa27cacacd7'
+    'X-RapidAPI-Key': `${API_KEY}`
 }
 
 const baseUrl = 'https://bing-news-search1.p.rapidapi.com'

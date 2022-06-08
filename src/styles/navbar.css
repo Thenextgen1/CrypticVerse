@@ -29,12 +29,14 @@
         padding-right: 2em;
     }
 
-    .category-links {
-        font-size: 1.1em;
-    }
-
     .ant-input-group-wrapper.search {
         width: 150px;
     }
 
+}
+
+@media(max-width: 1024px) {
+    .category-links {
+        font-size: 1.1em;
+    }
 }

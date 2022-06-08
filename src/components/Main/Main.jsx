@@ -4,22 +4,30 @@ import moment from 'moment'
 import { useGetNewsQuery } from '../../services/newsApi';
 import '../../styles/main.css';
 import demoImg from '../../assets/cycling-img.jpg'
+import demoFoot from '../../assets/demofootball.jpg'
+import demobox from '../../assets/demobox.jpg'
+
+
 
 
 const Main = () => {
 
     const { data: footballNews } = useGetNewsQuery({ newsCategory: 'Soccer, Football', count: 4 });
-    const { data: cyclingNews } = useGetNewsQuery({ newsCategory: 'Cycling, Surfing', count: 3 });
+    const { data: cyclingNews } = useGetNewsQuery({ newsCategory: 'Tennis', count: 3 });
     const { data: boxingNews } = useGetNewsQuery({ newsCategory: 'Boxing, MMA', count: 3 })
-    const desktopNews = footballNews?.value.slice(0, 3)
 
-    if (!desktopNews || !cyclingNews?.value || !boxingNews?.value) return 'Loading...'
+    if (!footballNews?.value || !cyclingNews?.value || !boxingNews?.value) return 'Loading...'
 
-    const allFootballNews = desktopNews.map((news, i) => (
+    const mediaQuery = window.matchMedia('(min-width: 690px) and (max-width: 1054px)')
+    let responsiveNews;
+    mediaQuery.matches ? responsiveNews = footballNews?.value.slice(0, 4) : responsiveNews = footballNews?.value.slice(0, 3)
+
+
+    const allFootballNews = responsiveNews.map((news, i) => (
         <div className='football-card'
             key={i}
         >
-            <img style={{ width: '300px', height: '150px' }} src={news?.image?.thumbnail?.contentUrl} alt="football-news" />
+            <img style={{ width: '300px', height: '150px' }} src={news?.image?.thumbnail?.contentUrl || demoFoot} alt="football-news" />
             <div className='football-newslink-container'>
                 <a className='football-link' href={news.url} target="_blank" rel='noreferrer'>Read Article</a>
                 <p>{news.provider[0]?.name.length > 20 ? `${news.provider[0]?.name.substring(0, 20)}...` : news.provider[0]?.name}</p>
@@ -43,7 +51,7 @@ const Main = () => {
                         {moment(news.datePublished).startOf('ss').fromNow()}
                     </p>
                 </div>
-                <img style={{ width: '100px', height: '100px' }} src={news?.image?.thumbnail?.contentUrl} alt="boxing" />
+                <img style={{ width: '100px', height: '100px' }} src={news?.image?.thumbnail?.contentUrl || demobox} alt="boxing" />
             </div>
             <a href={news.url} target="_blank" rel='noreferrer'>Read Article</a>
         </div>
@@ -118,27 +126,6 @@ const Main = () => {
                     {allcyclingNews}
                 </div>
             </section>
-
-
-            {/* <section className='basketball-card-container'>
-                <div className='basketball-card-heading'>
-                    <h3><span></span> Basketball</h3>
-                    <p>Show More</p>
-                </div>
-                <div className='basketball-card'>
-                    <img />
-                    <div>
-                        <Link to="/basketball" className='basketball-link'>BASKETBALL</Link>
-                        <p></p>
-                    </div>
-                    <h3></h3>
-                    <p></p>
-                </div>
-
-            </section> */}
-
-
-
 
 
         </main>

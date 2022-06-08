@@ -256,14 +256,22 @@
 
 
 
-@media(max-width: 1024px) {
+@media(max-width: 1054px) {
+    .football-cardheading {
+        width: 100%;
+    }
 
     .othersports-container {
         grid-template-columns: 1fr 1fr;
     }
 
+    .football-card-container {
+        justify-content: center;
+        align-items: center;
+    }
+
     .football-card-container .allfootballnews-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .sport-images-container {
@@ -286,6 +294,26 @@
         flex-direction: column;
     }
 }
+
+@media(max-width: 690px) {
+    .football-card {
+        margin-right: 0;
+    }
+
+    .football-card-container .allfootballnews-container {
+        grid-template-columns: 1fr;
+    }
+
+    .football-card-container {
+        justify-content: center;
+        align-items: center
+    }
+
+    .football-cardheading {
+        width: 100%;
+    }
+}
+
 
 @media(max-width: 670px) {
     .othersports-container {
